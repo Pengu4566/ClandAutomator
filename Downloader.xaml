@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1693,4760</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1693,4737</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Downloader_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -62,7 +62,7 @@
       <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="handles searching for embedded widgets and downloading a particular song&#xA;&#xA;inputs:&#xA;int32 - number of links clicked&#xA;string - current genre&#xA;collection - song list&#xA;---&#xA;outputs:&#xA;downloaded file on desktop&#xA;" sap:VirtualizedContainerService.HintSize="1653,4640" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap2010:Annotation.AnnotationText="handles searching for embedded widgets and downloading a particular song&#xA;&#xA;inputs:&#xA;int32 - number of links clicked&#xA;string - current genre&#xA;collection - song list&#xA;---&#xA;outputs:&#xA;downloaded file on desktop&#xA;" sap:VirtualizedContainerService.HintSize="1653,4617" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="counter" />
       <Variable x:TypeArguments="x:Boolean" Name="mixCloudExists" />
@@ -73,7 +73,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Downloader" sap:VirtualizedContainerService.HintSize="1615,4386" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence DisplayName="Downloader" sap:VirtualizedContainerService.HintSize="1615,4363" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:Browser" Name="chromeBrowserClandSong" />
       </Sequence.Variables>
@@ -166,7 +166,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close Tab, no dl links here" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_7" />
+                        <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close Tab, stickied post" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_7" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
@@ -206,7 +206,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <Delay DisplayName="Delay for 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
-                                    <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close song Tab, no dl links" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_9" />
+                                    <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close song Tab, mixcloud taken down" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_9" />
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
@@ -282,7 +282,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Delay DisplayName="Delay for 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                              <Delay DisplayName="Delay for 2 seconds" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
                               <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close song Tab, no dl links" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_3" />
                             </Sequence>
                           </If.Else>
@@ -290,7 +290,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <Assign DisplayName="increment counter" sap:VirtualizedContainerService.HintSize="1221,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign DisplayName="increment counter" sap:VirtualizedContainerService.HintSize="1429,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
                     </Assign.To>
@@ -304,8 +304,8 @@
           </ui:BrowserScope>
         </Sequence>
       </While>
-      <ui:Comment sap:VirtualizedContainerService.HintSize="1305,212" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// the delay below is entirely optional, but is useful if your computer has slow internet. &#xA;&#xA;// mixcloud allows only 6 concurrent downloads and will simply ignore every other time the bot clicks the download button and closes the tab...increase/decrease this delay to allow more time for large WAV/FLAC files to finish downloading. " />
-      <Delay DisplayName="Delay for 4 seconds" Duration="00:00:04" sap:VirtualizedContainerService.HintSize="1305,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+      <ui:Comment sap:VirtualizedContainerService.HintSize="1577,189" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// the delay below is entirely optional, but is useful if your computer has slow internet. &#xA;&#xA;// mixcloud allows only 6 concurrent downloads and will simply ignore every other download the bot initiated...increase/decrease this delay to allow more time for large WAV/FLAC files to finish downloading. " />
+      <Delay DisplayName="Delay for 4 seconds" Duration="00:00:04" sap:VirtualizedContainerService.HintSize="1577,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
     </Sequence>
   </Sequence>
 </Activity>
