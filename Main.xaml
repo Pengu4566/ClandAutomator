@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1153,5667" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1153,6161" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -52,10 +52,9 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1133,5607" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1133,6061" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_genreList" />
       <Variable x:TypeArguments="ui:Browser" Name="chromeBrowser" />
@@ -140,8 +139,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <While DisplayName="While we still have genre pages to process" sap:VirtualizedContainerService.HintSize="1091,3589" sap2010:WorkflowViewState.IdRef="While_1" Condition="[counter &lt; numGenres]">
-      <Sequence sap:VirtualizedContainerService.HintSize="1045,3431" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <While DisplayName="While we still have genre pages to process" sap:VirtualizedContainerService.HintSize="1091,3989" sap2010:WorkflowViewState.IdRef="While_1" Condition="[counter &lt; numGenres]">
+      <Sequence sap:VirtualizedContainerService.HintSize="1045,3831" sap2010:WorkflowViewState.IdRef="Sequence_11">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="currentGenre" />
           <Variable x:TypeArguments="x:Int32" Name="numLinksClicked" />
@@ -230,7 +229,7 @@
             </Catch>
           </TryCatch.Catches>
         </TryCatch>
-        <If Condition="[endOfUnreads]" DisplayName="if we reach the end of unread topics on a page" sap:VirtualizedContainerService.HintSize="1003,1721" sap2010:WorkflowViewState.IdRef="If_3">
+        <If Condition="[endOfUnreads]" DisplayName="if we reach the end of unread topics on a page" sap:VirtualizedContainerService.HintSize="1003,2121" sap2010:WorkflowViewState.IdRef="If_3">
           <If.Then>
             <Sequence sap:VirtualizedContainerService.HintSize="478,696" sap2010:WorkflowViewState.IdRef="Sequence_16">
               <sap:WorkflowViewStateService.ViewState>
@@ -278,7 +277,7 @@
             </Sequence>
           </If.Then>
           <If.Else>
-            <Sequence sap2010:Annotation.AnnotationText="MAKE A FIXER FIXER FOR Drum &amp; Bass, DnB -&gt;Drum &amp; Bass" sap:VirtualizedContainerService.HintSize="476,1573" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence sap2010:Annotation.AnnotationText="MAKE A FIXER FIXER FOR Drum &amp; Bass, DnB -&gt;Drum &amp; Bass" sap:VirtualizedContainerService.HintSize="480,1973" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="tabTitleFixed" />
               </Sequence.Variables>
@@ -288,7 +287,7 @@
                   <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="navigates to cland.io and opens new tabs corresponding to the genres in the input exel file&#xA;&#xA;inputs:&#xA;---&#xA;outputs:&#xA;UIpath.core.browser - browser variable&#xA;---&#xA;in/out:&#xA;DataTable - genre list" DisplayName="generate reverse song tab list (next page)" sap:VirtualizedContainerService.HintSize="434,249" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="makeGenreTodoList.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="navigates to cland.io and opens new tabs corresponding to the genres in the input exel file&#xA;&#xA;inputs:&#xA;---&#xA;outputs:&#xA;UIpath.core.browser - browser variable&#xA;---&#xA;in/out:&#xA;DataTable - genre list" DisplayName="generate reverse song tab list (next page)" sap:VirtualizedContainerService.HintSize="438,249" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="makeGenreTodoList.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="sd:DataTable" x:Key="genreList">[dt_songList]</InArgument>
                   <OutArgument x:TypeArguments="scg:ICollection(x:Object)" x:Key="reversedGenreList">[col_todoSongs]</OutArgument>
@@ -299,9 +298,9 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,183" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,583" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <TryCatch.Try>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,356" sap2010:WorkflowViewState.IdRef="Sequence_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -322,7 +321,7 @@
                   </Sequence>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <Catch x:TypeArguments="s:InvalidOperationException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -347,7 +346,7 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Changes the text of the genre to match irregulatities in the Cllv site design (eg. page title in house song pages is &quot;House Music&quot; while each song tab bas the title &quot;House&quot;)&#xA;&#xA;inputs:&#xA;string - genre name&#xA;---&#xA;outputs:&#xA;string - fixed genre name valid for current webpage" DisplayName="fix genre name" sap:VirtualizedContainerService.HintSize="434,249" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="GenreSelectorFixer.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Changes the text of the genre to match irregulatities in the Cllv site design (eg. page title in house song pages is &quot;House Music&quot; while each song tab bas the title &quot;House&quot;)&#xA;&#xA;inputs:&#xA;string - genre name&#xA;---&#xA;outputs:&#xA;string - fixed genre name valid for current webpage" DisplayName="fix genre name" sap:VirtualizedContainerService.HintSize="438,249" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="GenreSelectorFixer.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="inString">[currentGenreNoSpecials]</InArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="outString">[currentGenreNoSpecials]</OutArgument>
@@ -358,7 +357,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Changes the text of the current tab selector to correct irregularities in the cllv site design (&quot;Electronic Dance Music Community&quot; vs &quot;EDM Community&quot;)&#xA;&#xA;inputs:&#xA;string - tab selector name&#xA;---&#xA;outputs:&#xA;string - fixed tab selector" DisplayName="fix selector for chrome tab" sap:VirtualizedContainerService.HintSize="434,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="TabSelectorFixer.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Changes the text of the current tab selector to correct irregularities in the cllv site design (&quot;Electronic Dance Music Community&quot; vs &quot;EDM Community&quot;)&#xA;&#xA;inputs:&#xA;string - tab selector name&#xA;---&#xA;outputs:&#xA;string - fixed tab selector" DisplayName="fix selector for chrome tab" sap:VirtualizedContainerService.HintSize="438,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="TabSelectorFixer.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:String" x:Key="outString">[tabTitleFixed]</OutArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="inStringGenre">[currentGenreNoSpecials]</InArgument>
@@ -369,8 +368,8 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
-              <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="go to next page within genre" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="4a2a41840c7b4efa8afa195659bbe811" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenreNoSpecials+&quot; - &quot; + tabTitleFixed + &quot;' /&gt;&quot;]">
+              <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="go to next page within genre" sap:VirtualizedContainerService.HintSize="438,344" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="4a2a41840c7b4efa8afa195659bbe811" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenreNoSpecials+&quot; - &quot; + tabTitleFixed + &quot;' /&gt;&quot;]">
                 <ui:BrowserScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -419,7 +418,8 @@
       </Sequence>
     </While>
     <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Chrome Browser" sap:VirtualizedContainerService.HintSize="1091,22" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="chrome" />
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="opens telegram desktop and types a message into the &quot;saved messages&quot; chat&#xA;&#xA;inputs:&#xA;string - message to send&#xA;---&#xA;outputs:&#xA;telegram messge is sent to saved messages chat" DisplayName="log completion of program to telegram" sap:VirtualizedContainerService.HintSize="1091,227" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="TelegramNotifier.xaml">
+    <Delay DisplayName="allow all DL to finish" Duration="00:02:30" sap:VirtualizedContainerService.HintSize="1091,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="opens telegram desktop and types a message into the &quot;saved messages&quot; chat&#xA;&#xA;inputs:&#xA;string - message to send&#xA;---&#xA;outputs:&#xA;telegram messge is sent to saved messages chat" DisplayName="log completion of program to telegram" sap:VirtualizedContainerService.HintSize="1091,219" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="TelegramNotifier.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="notificationText">ALL DONE ;) - CLAND_BOT</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
