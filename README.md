@@ -3,7 +3,7 @@
 
 This program automates the task of downloading mp3s from the cland.io website using UiPath as a web automation platform. 
 
-![cland homepage](clandhomepage.PNG)
+![cland homepage](cland.PNG)
 
 ### Site Structrue
 The site is organized by genre with new topics to the forum acting as individual songs. The bot is capable of traversing multiple pages and only downloading songs from unread topics. The structure of the site is as follows:
