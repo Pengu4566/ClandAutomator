@@ -15,18 +15,18 @@ Home Page
 ### Queuing Genres
 An excel file lives in the root folder of the program containing all the genres the user wants the bot to download. The genres must be typed exactly as it is typed on the website, and the bot will skip a genre that it cannot find. An example is shown below:
 
-Electro House
-House
-Deep House
-Tech House
-G-House
-Trance
-Progressive Trance
-Twerk
-Grime
-Ambient
-BreakBeat/Breaks
-Progressive House
+Electro House,
+House,
+Deep House,
+Tech House,
+G-House,
+Trance,
+Progressive Trance,
+Twerk,
+Grime,
+Ambient,
+BreakBeat/Breaks,
+Progressive House,
 Drum & Bass
 
 
@@ -45,4 +45,4 @@ Lets say we only have "House" in the queue excel file and run the bot. Here is w
 
 ### Logging and Analytics
 
-
+This automation keeps logs of the unread topics it has downloaded files from as well as the author of that topic. It can analyze these metrics as well as which genre page the songs was downloaded from to give insight to song upload rates on the site as well as which genre the user downloads the most. The automation also has Telegram compatibility to log robot actions and errors through the chat client. This is useful if the user wants to be notified of events related to the robot when they are not present at the computer. 
