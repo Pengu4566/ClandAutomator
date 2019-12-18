@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1061,4339</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1238,5281</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SongLinkClicker_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -65,7 +65,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="middle clicks all unread song topics on a particular genre page, opening them in new tabs&#xA;&#xA;inputs:&#xA;string - song name without special characters&#xA;---&#xA;outputs:&#xA;int32 - number of links opened&#xA;datatable - list of songs on page&#xA;boolean - whether the end of unreads has been reached" DisplayName="SongLinkClicker" sap:VirtualizedContainerService.HintSize="1021,4259" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="middle clicks all unread song topics on a particular genre page, opening them in new tabs&#xA;&#xA;inputs:&#xA;string - song name without special characters&#xA;---&#xA;outputs:&#xA;int32 - number of links opened&#xA;datatable - list of songs on page&#xA;boolean - whether the end of unreads has been reached" DisplayName="SongLinkClicker" sap:VirtualizedContainerService.HintSize="1218,5181" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="numSongsOnPage" />
       <Variable x:TypeArguments="x:String" Name="opName" />
@@ -81,7 +81,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Changes the text of the genre to match irregulatities in the Cllv site design (eg. page title in house song pages is &quot;House Music&quot; while each song tab bas the title &quot;House&quot;)&#xA;&#xA;inputs:&#xA;string - genre name&#xA;---&#xA;outputs:&#xA;string - fixed genre name valid for current webpage" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="999,249" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="GenreSelectorFixer.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Changes the text of the genre to match irregulatities in the Cllv site design (eg. page title in house song pages is &quot;House Music&quot; while each song tab bas the title &quot;House&quot;)&#xA;&#xA;inputs:&#xA;string - genre name&#xA;---&#xA;outputs:&#xA;string - fixed genre name valid for current webpage" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1176,249" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="GenreSelectorFixer.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="inString">[currentGenre]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="outString">[currentGenre]</OutArgument>
@@ -92,7 +92,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Changes the text of the current tab selector to correct irregularities in the cllv site design (&quot;Electronic Dance Music Community&quot; vs &quot;EDM Community&quot;)&#xA;&#xA;inputs:&#xA;string - tab selector name&#xA;---&#xA;outputs:&#xA;string - fixed tab selector" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="999,249" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="TabSelectorFixer.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Changes the text of the current tab selector to correct irregularities in the cllv site design (&quot;Electronic Dance Music Community&quot; vs &quot;EDM Community&quot;)&#xA;&#xA;inputs:&#xA;string - tab selector name&#xA;---&#xA;outputs:&#xA;string - fixed tab selector" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1176,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="TabSelectorFixer.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="outString">[tabSelectorFixed]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="inStringGenre">[currentGenre]</InArgument>
@@ -103,7 +103,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <Assign DisplayName="end of unread songs boolean" sap:VirtualizedContainerService.HintSize="999,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+    <Assign DisplayName="end of unread songs boolean" sap:VirtualizedContainerService.HintSize="1176,60" sap2010:WorkflowViewState.IdRef="Assign_23">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Boolean">[endOfUnreads]</OutArgument>
       </Assign.To>
@@ -111,7 +111,7 @@
         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="set counter to 0" sap:VirtualizedContainerService.HintSize="999,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+    <Assign DisplayName="set counter to 0" sap:VirtualizedContainerService.HintSize="1176,60" sap2010:WorkflowViewState.IdRef="Assign_13">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
       </Assign.To>
@@ -119,7 +119,7 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="number of links clicked is initially 0" sap:VirtualizedContainerService.HintSize="999,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <Assign DisplayName="number of links clicked is initially 0" sap:VirtualizedContainerService.HintSize="1176,60" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[numLinksClicked]</OutArgument>
       </Assign.To>
@@ -127,7 +127,7 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="number of open links is initially 0" sap:VirtualizedContainerService.HintSize="999,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+    <Assign DisplayName="number of open links is initially 0" sap:VirtualizedContainerService.HintSize="1176,60" sap2010:WorkflowViewState.IdRef="Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[numLinksOpened]</OutArgument>
       </Assign.To>
@@ -135,7 +135,7 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="indexes of a database to delete" sap:VirtualizedContainerService.HintSize="999,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+    <Assign DisplayName="indexes of a database to delete" sap:VirtualizedContainerService.HintSize="1176,60" sap2010:WorkflowViewState.IdRef="Assign_21">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:ICollection(x:Object)">[deleteIndexes]</OutArgument>
       </Assign.To>
@@ -143,27 +143,70 @@
         <InArgument x:TypeArguments="scg:ICollection(x:Object)">[new List(of object)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="999,500" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1176,606" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="518,528" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,436" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser genre page that was last opened" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="5fdce1a41a80384b73668eecf82d6975" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenre+&quot; - &quot; + tabSelectorFixed + &quot;'/&gt;&quot;]">
+              <ui:BrowserScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExtractData ContinueOnError="True" DataTable="[dt_songList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data song names/OPs" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' class='ipsDataItem ipsDataItem_responsivePhoto ipsDataItem_unread  '/&gt;&lt;webctrl tag='div' class='ipsDataItem_main' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='UnreadSongName' attr='text'&gt;&lt;webctrl tag='li' class='ipsDataItem ipsDataItem_responsivePhoto ipsDataItem_unread  '/&gt;&lt;webctrl tag='div' class='ipsDataItem_main' idx='1'/&gt;&lt;webctrl tag='h4' class='ipsDataItem_title ipsContained_container' idx='1'/&gt;&lt;webctrl tag='span' class='ipsType_break ipsContained' idx='1'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='UnreadOP' attr='text'&gt;&lt;webctrl tag='li' class='ipsDataItem ipsDataItem_responsivePhoto ipsDataItem_unread  '/&gt;&lt;webctrl tag='div' class='ipsDataItem_main' idx='1'/&gt;&lt;webctrl tag='div' class='ipsDataItem_meta ipsType_reset ipsType_light ipsType_blendLinks' idx='1'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="30" NextLinkSelector="&lt;webctrl aaname='Next' parentid='elPagination_e58d31d377c5d294ddb783aa79eca412_1215242937' tag='A' /&gt;">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d2abe4d553271dd3c28de29f78b58ab4" Selector="&lt;webctrl id='elTable_*' tag='OL' /&gt;" WaitForReady="COMPLETE" />
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                  </Sequence>
+                </ActivityAction>
+              </ui:BrowserScope.Body>
+            </ui:BrowserScope>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1176,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;CURRENT GENRE = &quot; + currentGenre]" />
+    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="1176,436" sap2010:WorkflowViewState.IdRef="Sequence_28">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser genre page that was last opened" sap:VirtualizedContainerService.HintSize="414,376" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="5fdce1a41a80384b73668eecf82d6975" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenre+&quot; - &quot; + tabSelectorFixed + &quot;'/&gt;&quot;]">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Progressi Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="ba887661a7af9f5a412110960f1ae3da" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenre+&quot; - &quot; + tabSelectorFixed + &quot;'/&gt;&quot;]">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,230" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_27">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExtractData ContinueOnError="True" DataTable="[dt_songList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data song names/OPs" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' class='ipsDataItem ipsDataItem_responsivePhoto ipsDataItem_unread  '/&gt;&lt;webctrl tag='div' class='ipsDataItem_main' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='UnreadSongName' attr='text'&gt;&lt;webctrl tag='li' class='ipsDataItem ipsDataItem_responsivePhoto ipsDataItem_unread  '/&gt;&lt;webctrl tag='div' class='ipsDataItem_main' idx='1'/&gt;&lt;webctrl tag='h4' class='ipsDataItem_title ipsContained_container' idx='1'/&gt;&lt;webctrl tag='span' class='ipsType_break ipsContained' idx='1'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='UnreadOP' attr='text'&gt;&lt;webctrl tag='li' class='ipsDataItem ipsDataItem_responsivePhoto ipsDataItem_unread  '/&gt;&lt;webctrl tag='div' class='ipsDataItem_main' idx='1'/&gt;&lt;webctrl tag='div' class='ipsDataItem_meta ipsType_reset ipsType_light ipsType_blendLinks' idx='1'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ExtractData_2" MaxNumberOfResults="30" NextLinkSelector="&lt;webctrl aaname='Next' parentid='elPagination_e58d31d377c5d294ddb783aa79eca412_1215242937' tag='A' /&gt;">
+              <ui:ExtractData ContinueOnError="True" DataTable="[dt_songList]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'OL  elTable_459c77dbe66...'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' class='ipsDataItem ipsDataItem_responsivePhoto ipsDataItem_unread row_unread_back_color  '/&gt;&lt;webctrl tag='div' class='ipsDataItem_main' idx='1'/&gt;&lt;/row&gt;&lt;column exact='1' name='songName' attr='text'&gt;&lt;webctrl tag='li' class='ipsDataItem ipsDataItem_responsivePhoto ipsDataItem_unread row_unread_back_color  '/&gt;&lt;webctrl tag='div' class='ipsDataItem_main' idx='1'/&gt;&lt;webctrl tag='h4' class='unread_font_weight ipsDataItem_title ipsContained_container' idx='1'/&gt;&lt;webctrl tag='span' class='ipsType_break ipsContained' idx='1'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;column exact='1' name='Author' attr='text'&gt;&lt;webctrl tag='li' class='ipsDataItem ipsDataItem_responsivePhoto ipsDataItem_unread row_unread_back_color  '/&gt;&lt;webctrl tag='div' class='ipsDataItem_main' idx='1'/&gt;&lt;webctrl tag='span' text='By &amp;#10;&amp;#10;&amp;#10;,' idx='1'/&gt;&lt;webctrl tag='a' class='ipsType_break' idx='1'/&gt;&lt;webctrl tag='span' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_3" MaxNumberOfResults="100" NextLinkSelector="&lt;webctrl aaname='Next' parentid='elPagination_801c13bff3053228a5e0faf6646c61a2_849245700' tag='A' /&gt;">
                 <ui:ExtractData.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d2abe4d553271dd3c28de29f78b58ab4" Selector="&lt;webctrl id='elTable_*' tag='OL' /&gt;" WaitForReady="COMPLETE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6f4ec8085e5fb09c3cd831df2d5597f4" Selector="&lt;webctrl id='elTable_*' tag='OL' /&gt;" WaitForReady="COMPLETE" />
                 </ui:ExtractData.Target>
               </ui:ExtractData>
             </Sequence>
@@ -171,16 +214,33 @@
         </ui:BrowserScope.Body>
       </ui:BrowserScope>
     </Sequence>
-    <ui:AppendCsvFile Encoding="{x:Null}" DataTable="[dt_songList]" Delimitator="Comma" DisplayName="append song list to csv" FilePath="UnreadSongs.csv" sap:VirtualizedContainerService.HintSize="999,87" sap2010:WorkflowViewState.IdRef="AppendCsvFile_1" />
-    <If Condition="[dt_songlist.Rows.Count &lt; 5]" DisplayName="if the number of songs on the page is less than 5, skip the page and move on" sap:VirtualizedContainerService.HintSize="999,1916" sap2010:WorkflowViewState.IdRef="If_4">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_songList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1176,331" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_30">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;unread song found: &quot; + row(0).ToString]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:AppendCsvFile Encoding="{x:Null}" DataTable="[dt_songList]" Delimitator="Comma" DisplayName="append song list to csv" FilePath="UnreadSongs.csv" sap:VirtualizedContainerService.HintSize="1176,87" sap2010:WorkflowViewState.IdRef="AppendCsvFile_1" />
+    <If Condition="[dt_songlist.Rows.Count &lt; 2]" DisplayName="if the number of songs on the page is less than 5, skip the page and move on" sap:VirtualizedContainerService.HintSize="1176,1801" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="436,775" sap2010:WorkflowViewState.IdRef="Sequence_25">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,711" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="opens telegram desktop and types a message into the &quot;saved messages&quot; chat&#xA;&#xA;inputs:&#xA;string - message to send&#xA;---&#xA;outputs:&#xA;telegram messge is sent to saved messages chat" DisplayName="log the current genre to telegram" sap:VirtualizedContainerService.HintSize="414,219" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="TelegramNotifier.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="opens telegram desktop and types a message into the &quot;saved messages&quot; chat&#xA;&#xA;inputs:&#xA;string - message to send&#xA;---&#xA;outputs:&#xA;telegram messge is sent to saved messages chat" DisplayName="log the current genre to telegram" sap:VirtualizedContainerService.HintSize="434,219" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="TelegramNotifier.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="notificationText">^^^SKIPPING^^^ - CLAND_BOT</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
@@ -190,7 +250,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <Assign DisplayName="end of unreads for genre" sap:VirtualizedContainerService.HintSize="414,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+          <Assign DisplayName="end of unreads for genre" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_24">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[endOfUnreads]</OutArgument>
             </Assign.To>
@@ -198,13 +258,13 @@
               <InArgument x:TypeArguments="x:Boolean">True</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="close current genre tab" sap:VirtualizedContainerService.HintSize="414,292" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="4a2a41840c7b4efa8afa195659bbe811" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenre+&quot; - &quot; + tabSelectorFixed + &quot;'/&gt;&quot;]">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="close current genre tab" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="4a2a41840c7b4efa8afa195659bbe811" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenre+&quot; - &quot; + tabSelectorFixed + &quot;'/&gt;&quot;]">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="222,146" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_24">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="ui:Browser" Name="chromeBrowserMixcloudSong" />
                   </Sequence.Variables>
@@ -221,13 +281,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="538,1768" sap2010:WorkflowViewState.IdRef="Sequence_26">
+        <Sequence sap:VirtualizedContainerService.HintSize="655,1657" sap2010:WorkflowViewState.IdRef="Sequence_26">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="opens telegram desktop and types a message into the &quot;saved messages&quot; chat&#xA;&#xA;inputs:&#xA;string - message to send&#xA;---&#xA;outputs:&#xA;telegram messge is sent to saved messages chat" DisplayName="log the current genre to telegram" sap:VirtualizedContainerService.HintSize="516,219" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="TelegramNotifier.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="opens telegram desktop and types a message into the &quot;saved messages&quot; chat&#xA;&#xA;inputs:&#xA;string - message to send&#xA;---&#xA;outputs:&#xA;telegram messge is sent to saved messages chat" DisplayName="log the current genre to telegram" sap:VirtualizedContainerService.HintSize="613,219" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="TelegramNotifier.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="notificationText">^^^DOWNLOADING^^^ - CLAND_BOT</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
@@ -237,13 +297,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_songList]" DisplayName="For Each song in song list dt, click on that song in the webpage, avoiding blacklisted OPs" sap:VirtualizedContainerService.HintSize="516,1385" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_songList]" DisplayName="For Each song in song list dt, click on that song in the webpage, avoiding blacklisted OPs" sap:VirtualizedContainerService.HintSize="613,1306" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1237" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,1158" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="opNameNoSpecials" />
                     <Variable x:TypeArguments="x:String" Name="songNameNoSpecials" />
@@ -256,7 +316,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign song name" sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign DisplayName="Assign song name" sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[songName]</OutArgument>
                     </Assign.To>
@@ -264,7 +324,7 @@
                       <InArgument x:TypeArguments="x:String">[row(0).ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign DisplayName="Assign OP name" sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign DisplayName="Assign OP name" sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[opName]</OutArgument>
                     </Assign.To>
@@ -272,7 +332,7 @@
                       <InArgument x:TypeArguments="x:String">[row(1).ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="removes special characters from strings fed into it&#xA;&#xA;inputs:&#xA;string - song name&#xA;string - post author name&#xA;---&#xA;outputs:&#xA;string - song name without special characters&#xA;string - post author name wihtout special characters" DisplayName="remove special characters" sap:VirtualizedContainerService.HintSize="464,249" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SpecialCharRemover.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="removes special characters from strings fed into it&#xA;&#xA;inputs:&#xA;string - song name&#xA;string - post author name&#xA;---&#xA;outputs:&#xA;string - song name without special characters&#xA;string - post author name wihtout special characters" DisplayName="remove special characters" sap:VirtualizedContainerService.HintSize="521,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SpecialCharRemover.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="songName">[songName]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="opName">[opName]</InArgument>
@@ -285,20 +345,20 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <ui:UiElementExists DisplayName="does the song text exist?" Exists="[songTextExists]" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists DisplayName="does the song text exist?" Exists="[songTextExists]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="687b49181036354504564db15de0a6c1" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenre+&quot; - &quot; + tabSelectorFixed + &quot;'/&gt;&lt;webctrl tag='SPAN' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&quot;+songNameNoSpecials.Trim+&quot; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' isleaf='1' parentclass='ipsType_break ipsContained' /&gt;&quot;]" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[songTextExists = True]" sap:VirtualizedContainerService.HintSize="464,478" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[songTextExists = True]" sap:VirtualizedContainerService.HintSize="521,446" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="336,330" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,298" sap2010:WorkflowViewState.IdRef="Sequence_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="middle click song name, opening it in a new tab" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_MIDDLE" SendWindowMessages="False" SimulateClick="True">
+                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="middle click song name, opening it in a new tab" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_MIDDLE" SendWindowMessages="False" SimulateClick="True">
                           <ui:Click.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -313,7 +373,7 @@
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="730333c94eb791a81a5292215c930f8e" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenre+&quot; - &quot; + tabSelectorFixed + &quot;'/&gt;&lt;webctrl tag='SPAN' aaname=' &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&quot;+songNameNoSpecials.Trim+&quot; &amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;&amp;#x9;' isleaf='1' parentclass='ipsType_break ipsContained' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
                           </ui:Click.Target>
                         </ui:Click>
-                        <Assign DisplayName="increment links clicked" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                        <Assign DisplayName="increment links clicked" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Int32">[numLinksClicked]</OutArgument>
                           </Assign.To>
@@ -331,12 +391,12 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="log number of unreads found to telegram" sap:VirtualizedContainerService.HintSize="999,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="TelegramNotifier.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="log number of unreads found to telegram" sap:VirtualizedContainerService.HintSize="1176,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="TelegramNotifier.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="notificationText">["found " + dt_songList.Rows.Count.ToString + " song(s) - CLAND_BOT"]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Assign DisplayName="increment counter" sap:VirtualizedContainerService.HintSize="999,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+    <Assign DisplayName="increment counter" sap:VirtualizedContainerService.HintSize="1176,60" sap2010:WorkflowViewState.IdRef="Assign_14">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
       </Assign.To>
@@ -344,7 +404,7 @@
         <InArgument x:TypeArguments="x:Int32">[counter + 1]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="equalize # of links open/clicked" sap:VirtualizedContainerService.HintSize="999,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <Assign DisplayName="equalize # of links open/clicked" sap:VirtualizedContainerService.HintSize="1176,60" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[numLinksOpened]</OutArgument>
       </Assign.To>

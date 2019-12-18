@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1693,4737</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2001,5056</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Downloader_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -60,9 +60,10 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="handles searching for embedded widgets and downloading a particular song&#xA;&#xA;inputs:&#xA;int32 - number of links clicked&#xA;string - current genre&#xA;collection - song list&#xA;---&#xA;outputs:&#xA;downloaded file on desktop&#xA;" sap:VirtualizedContainerService.HintSize="1653,4617" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap2010:Annotation.AnnotationText="handles searching for embedded widgets and downloading a particular song&#xA;&#xA;inputs:&#xA;int32 - number of links clicked&#xA;string - current genre&#xA;collection - song list&#xA;---&#xA;outputs:&#xA;downloaded file on desktop&#xA;" sap:VirtualizedContainerService.HintSize="1981,4956" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="counter" />
       <Variable x:TypeArguments="x:Boolean" Name="mixCloudExists" />
@@ -73,21 +74,21 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Downloader" sap:VirtualizedContainerService.HintSize="1615,4363" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence DisplayName="Downloader" sap:VirtualizedContainerService.HintSize="1939,4692" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:Browser" Name="chromeBrowserClandSong" />
+        <Variable x:TypeArguments="x:String" Name="currentSong" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1577,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;PROCESSING &quot; + numLinksClicked.ToString + &quot; &quot; + currentGenre + &quot; tracks...&quot;]" />
-      <While DisplayName="while the song number we are on is less than the number of links clicked in the song page..." sap:VirtualizedContainerService.HintSize="1577,3849" sap2010:WorkflowViewState.IdRef="While_2" Condition="[counter &lt; numLinksClicked]">
-        <Sequence sap:VirtualizedContainerService.HintSize="1535,3691" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1897,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;PROCESSING &quot; + numLinksClicked.ToString + &quot; &quot; + currentGenre + &quot; tracks...&quot;]" />
+      <While DisplayName="while the song number we are on is less than the number of links clicked in the song page..." sap:VirtualizedContainerService.HintSize="1897,4173" sap2010:WorkflowViewState.IdRef="While_2" Condition="[counter &lt; numLinksClicked]">
+        <Sequence sap:VirtualizedContainerService.HintSize="1851,4013" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="nuttin" />
-            <Variable x:TypeArguments="x:String" Name="currentSong" />
             <Variable x:TypeArguments="x:Boolean" Name="zippyShareExists" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
@@ -95,7 +96,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="removes special characters from strings fed into it&#xA;&#xA;inputs:&#xA;string - song name&#xA;string - post author name&#xA;---&#xA;outputs:&#xA;string - song name without special characters&#xA;string - post author name wihtout special characters" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1497,249" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SpecialCharRemover.xaml">
+          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="removes special characters from strings fed into it&#xA;&#xA;inputs:&#xA;string - song name&#xA;string - post author name&#xA;---&#xA;outputs:&#xA;string - song name without special characters&#xA;string - post author name wihtout special characters" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1809,243" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SpecialCharRemover.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="songName">[songList(counter).toString]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="opName">[currentGenre]</InArgument>
@@ -108,7 +109,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <Assign DisplayName="trim the current song name" sap:VirtualizedContainerService.HintSize="1497,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign DisplayName="trim the current song name" sap:VirtualizedContainerService.HintSize="1809,60" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[currentSong]</OutArgument>
             </Assign.To>
@@ -116,14 +117,14 @@
               <InArgument x:TypeArguments="x:String">[currentSong.Trim]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1497,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;PROCESSING &quot; + currentSong]" />
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="attach to the song page" sap:VirtualizedContainerService.HintSize="1497,3079" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="2e685f19a98bd1ac3ae7d1501e85995a" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentSong+&quot; - &quot;+currentGenre+&quot; - Electronic Dance Music Community' /&gt;&quot;]" UiBrowser="[chromeBrowserClandSong]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1809,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;PROCESSING &quot; + currentSong]" />
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="attach to the song page" sap:VirtualizedContainerService.HintSize="1809,3405" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="2e685f19a98bd1ac3ae7d1501e85995a" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentSong+&quot; - &quot;+currentGenre+&quot; - Electronic Dance Music Community' /&gt;&quot;]" UiBrowser="[chromeBrowserClandSong]">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1467,2933" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1775,3259" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="stickyExists" />
                     <Variable x:TypeArguments="x:Boolean" Name="soundcloudExists" />
@@ -133,57 +134,73 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:UiElementExists DisplayName="looks for zippyshare download button" Exists="[zippyShareExists]" sap:VirtualizedContainerService.HintSize="1429,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                  <ui:UiElementExists DisplayName="looks for zippyshare download button" Exists="[zippyShareExists]" sap:VirtualizedContainerService.HintSize="1733,106" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="544e31c9a44b874f9a3f474d31170010" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentSong+&quot; - &quot;+currentGenre+&quot; - Electronic Dance Music Community' /&gt;&lt;webctrl tag='AUDIO' /&gt;&quot;]" TimeoutMS="3000" WaitForReady="COMPLETE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[zippyShareExists]" DisplayName="if zippy download button exists..." sap:VirtualizedContainerService.HintSize="1429,207" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[zippyShareExists]" DisplayName="if zippy download button exists..." sap:VirtualizedContainerService.HintSize="1733,209" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close Tab, zippy is banned" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_4" />
+                      <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close Tab, zippy is banned" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_4" />
                     </If.Then>
                   </If>
-                  <ui:UiElementExists DisplayName="looks for Soundcloud download button" Exists="[zippyShareExists]" sap:VirtualizedContainerService.HintSize="1429,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
+                  <ui:UiElementExists DisplayName="looks for Soundcloud download button" Exists="[zippyShareExists]" sap:VirtualizedContainerService.HintSize="1733,106" sap2010:WorkflowViewState.IdRef="UiElementExists_5">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="544e31c9a44b874f9a3f474d31170010" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentSong+&quot; - &quot;+currentGenre+&quot; - Electronic Dance Music Community' /&gt;&lt;webctrl src='https://cland.io/index.php?app=core&amp;amp;module=system&amp;amp;controller=emb*' tag='IFRAME' /&gt;&lt;webctrl src='https://w.soundcloud.com/player/*' tag='IFRAME' /&gt;&quot;]" TimeoutMS="3000" WaitForReady="COMPLETE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[soundcloudExists]" DisplayName="if soundcloud embed exists" sap:VirtualizedContainerService.HintSize="1429,207" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If Condition="[soundcloudExists]" DisplayName="if soundcloud embed exists" sap:VirtualizedContainerService.HintSize="1733,209" sap2010:WorkflowViewState.IdRef="If_4">
                     <If.Then>
-                      <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close Tab, cant dl from SC" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_8" />
+                      <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close Tab, cant dl from SC" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_8" />
                     </If.Then>
                   </If>
-                  <ui:UiElementExists DisplayName="check if current page is a stickied post" Exists="[stickyExists]" sap:VirtualizedContainerService.HintSize="1429,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                  <ui:UiElementExists DisplayName="check if current page is a stickied post" Exists="[stickyExists]" sap:VirtualizedContainerService.HintSize="1733,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2713d756513b74498acc7ecc6dce7584" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentSong+&quot; - &quot;+currentGenre+&quot; - Electronic Dance Music Community' /&gt;&lt;webctrl tag='I' parentclass='ipsBadge ipsBadge_icon ipsBadge_positive' /&gt;&quot;]" TimeoutMS="3000" WaitForReady="COMPLETE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[stickyExists]" DisplayName="If the current page is a stickied post..." sap:VirtualizedContainerService.HintSize="1429,1809" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[stickyExists]" DisplayName="If the current page is a stickied post..." sap:VirtualizedContainerService.HintSize="1733,2131" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="254,114" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_17">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close Tab, stickied post" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_7" />
+                        <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close Tab, stickied post" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_7" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="1134,1662" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                      <Sequence sap:VirtualizedContainerService.HintSize="1446,1982" sap2010:WorkflowViewState.IdRef="Sequence_18">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:UiElementExists DisplayName="looks for mixcloud embedded widget" Exists="[mixCloudExists]" sap:VirtualizedContainerService.HintSize="1096,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1404,276" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:UiElementExists DisplayName="looks for mixcloud embedded widget" Exists="[mixCloudExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                                <ui:UiElementExists.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7eb7748975ee6f093e7828d85e7e7946" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentSong+&quot; - &quot;+currentGenre+&quot; - Electronic Dance Music Community' /&gt;&lt;webctrl tag='P' isleaf='0' parentclass='ipsType_normal ipsType_richText ipsContained' /&gt;&quot;]" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                                </ui:UiElementExists.Target>
+                              </ui:UiElementExists>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                        </ui:CommentOut>
+                        <ui:UiElementExists DisplayName="looks for mixcloud embedded widget" Exists="[mixCloudExists]" sap:VirtualizedContainerService.HintSize="1404,106" sap2010:WorkflowViewState.IdRef="UiElementExists_7">
                           <ui:UiElementExists.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7eb7748975ee6f093e7828d85e7e7946" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentSong+&quot; - &quot;+currentGenre+&quot; - Electronic Dance Music Community' /&gt;&lt;webctrl tag='P' isleaf='0' parentclass='ipsType_normal ipsType_richText ipsContained' /&gt;&quot;]" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7eb7748975ee6f093e7828d85e7e7946" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentSong+&quot; - &quot;+currentGenre+&quot; - Electronic Dance Music Community'/&gt;&lt;webctrl src='*beatexs.com*' tag='IFRAME' /&gt;&quot;]" TimeoutMS="15000" WaitForReady="INTERACTIVE" />
                           </ui:UiElementExists.Target>
                         </ui:UiElementExists>
-                        <If Condition="[mixcloudExists]" DisplayName="If mixcloud embed exists" sap:VirtualizedContainerService.HintSize="1096,1424" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If Condition="[mixcloudExists]" DisplayName="If mixcloud embed exists" sap:VirtualizedContainerService.HintSize="1404,1428" sap2010:WorkflowViewState.IdRef="If_1">
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="801,1277" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <Sequence sap:VirtualizedContainerService.HintSize="805,1279" sap2010:WorkflowViewState.IdRef="Sequence_6">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Boolean" Name="mixCloudTakedown" />
                               </Sequence.Variables>
@@ -197,26 +214,26 @@
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1959441dc1497797f61605a79c634f0f" Selector="&lt;webctrl src='https://mixstep.co/embed/aoie9b7lyp60' tag='IFRAME' /&gt;&lt;webctrl tag='H1' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                                 </ui:UiElementExists.Target>
                               </ui:UiElementExists>
-                              <If Condition="[mixCloudTakedown]" sap:VirtualizedContainerService.HintSize="763,915" sap2010:WorkflowViewState.IdRef="If_5">
+                              <If Condition="[mixCloudTakedown]" sap:VirtualizedContainerService.HintSize="763,917" sap2010:WorkflowViewState.IdRef="If_5">
                                 <If.Then>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="254,176" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="242,176" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Delay DisplayName="Delay for 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
-                                    <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close song Tab, mixcloud taken down" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_9" />
+                                    <Delay DisplayName="Delay for 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                                    <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close song Tab, mixcloud taken down" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_9" />
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="468,768" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="476,768" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="click the download buttons on the embed" sap:VirtualizedContainerService.HintSize="430,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="click the download buttons on the embed" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                       <ui:Click.CursorPosition>
                                         <ui:CursorPosition Position="Center">
                                           <ui:CursorPosition.OffsetX>
@@ -231,8 +248,8 @@
                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8f40ae7efe154cbdbafe7bf0af930ff7" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentSong+&quot; - &quot;+currentGenre+&quot; - Electronic Dance Music Community' /&gt;&lt;webctrl src='https://beatexs.com*' tag='IFRAME' idx='1' /&gt;&lt;webctrl aaname='Download' tag='IMG' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
                                       </ui:Click.Target>
                                     </ui:Click>
-                                    <Delay DisplayName="Delay for 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="430,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="click download on mixcloud page" sap:VirtualizedContainerService.HintSize="430,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                    <Delay DisplayName="Delay for 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="click download on mixcloud page" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                       <ui:Click.CursorPosition>
                                         <ui:CursorPosition Position="Center">
                                           <ui:CursorPosition.OffsetX>
@@ -247,14 +264,14 @@
                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="52c08700cea0f7c28e9ab90342bde74e" Selector="&lt;html app='chrome.exe' url='https://beatexs.com/*' /&gt;&lt;webctrl css-selector='html' tag='HTML' /&gt;&lt;webctrl id='downloadbtn' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
                                       </ui:Click.Target>
                                     </ui:Click>
-                                    <Delay DisplayName="Delay for 1 second" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="430,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="attach to mixcloud tab" sap:VirtualizedContainerService.HintSize="430,260" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="4a2a41840c7b4efa8afa195659bbe811" Selector="&lt;html app='chrome.exe' url='https://beatexs.com/*' /&gt;">
+                                    <Delay DisplayName="Delay for 1 second" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="attach to mixcloud tab" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="4a2a41840c7b4efa8afa195659bbe811" Selector="&lt;html app='chrome.exe' url='https://beatexs.com/*' /&gt;">
                                       <ui:BrowserScope.Body>
                                         <ActivityAction x:TypeArguments="x:Object">
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                           </ActivityAction.Argument>
-                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="254,114" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="ui:Browser" Name="chromeBrowserMixcloudSong" />
                                             </Sequence.Variables>
@@ -263,7 +280,7 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:CloseTab Browser="[chromeBrowserMixcloudSong]" DisplayName="Close mixcloud Tab" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_5" />
+                                            <ui:CloseTab Browser="[chromeBrowserMixcloudSong]" DisplayName="Close mixcloud Tab" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_5" />
                                           </Sequence>
                                         </ActivityAction>
                                       </ui:BrowserScope.Body>
@@ -276,21 +293,71 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="254,176" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                            <Sequence sap:VirtualizedContainerService.HintSize="554,937" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="ui:Browser" Name="noDlLinksBrowser" />
+                              </Sequence.Variables>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Delay DisplayName="Delay for 2 seconds" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
-                              <ui:CloseTab Browser="[chromeBrowserClandSong]" DisplayName="Close song Tab, no dl links" sap:VirtualizedContainerService.HintSize="216,22" sap2010:WorkflowViewState.IdRef="CloseTab_3" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;[Downloader] - CANNOT FIND MIXCLOUD&quot; + currentSong]" />
+                              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" sap:VirtualizedContainerService.HintSize="512,68" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                <ui:Click.CursorPosition>
+                                  <ui:CursorPosition Position="Center">
+                                    <ui:CursorPosition.OffsetX>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetX>
+                                    <ui:CursorPosition.OffsetY>
+                                      <InArgument x:TypeArguments="x:Int32" />
+                                    </ui:CursorPosition.OffsetY>
+                                  </ui:CursorPosition>
+                                </ui:Click.CursorPosition>
+                                <ui:Click.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;html app='chrome.exe' title='*' /&gt;" WaitForReady="INTERACTIVE" />
+                                </ui:Click.Target>
+                              </ui:Click>
+                              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="close song tab, NO DL LINKS" EmptyField="False" sap:VirtualizedContainerService.HintSize="512,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="True" SimulateType="False" Text="%%[d(ctrl)]w[u(ctrl)]">
+                                <ui:TypeInto.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c7c84668f88fb82567a5ec4ea2289737" Selector="&lt;html app='chrome.exe' title='*' /&gt;" WaitForReady="INTERACTIVE" />
+                                </ui:TypeInto.Target>
+                              </ui:TypeInto>
+                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,430" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                <ui:CommentOut.Body>
+                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,352" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Browser="[noDlLinksBrowser]" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Kolombo'" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="cddc4b199e32ed5981fe1d2da8087bd7" UiBrowser="[noDlLinksBrowser]">
+                                      <ui:BrowserScope.Body>
+                                        <ActivityAction x:TypeArguments="x:Object">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:CloseTab Browser="[noDlLinksBrowser]" DisplayName="Close song Tab, no dl links" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="CloseTab_3" />
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:BrowserScope.Body>
+                                    </ui:BrowserScope>
+                                  </Sequence>
+                                </ui:CommentOut.Body>
+                              </ui:CommentOut>
                             </Sequence>
                           </If.Else>
                         </If>
                       </Sequence>
                     </If.Else>
                   </If>
-                  <Assign DisplayName="increment counter" sap:VirtualizedContainerService.HintSize="1429,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign DisplayName="increment counter" sap:VirtualizedContainerService.HintSize="1733,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
                     </Assign.To>
@@ -304,8 +371,8 @@
           </ui:BrowserScope>
         </Sequence>
       </While>
-      <ui:Comment sap:VirtualizedContainerService.HintSize="1577,189" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// the delay below is entirely optional, but is useful if your computer has slow internet. &#xA;&#xA;// mixcloud allows only 6 concurrent downloads and will simply ignore every other download the bot initiated...increase/decrease this delay to allow more time for large WAV/FLAC files to finish downloading. " />
-      <Delay DisplayName="Delay for 4 seconds" Duration="00:00:04" sap:VirtualizedContainerService.HintSize="1577,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+      <ui:Comment sap:VirtualizedContainerService.HintSize="1897,192" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// the delay below is entirely optional, but is useful if your computer has slow internet. &#xA;&#xA;// mixcloud allows only 6 concurrent downloads and will simply ignore every other download the bot initiated...increase/decrease this delay to allow more time for large WAV/FLAC files to finish downloading. " />
+      <Delay DisplayName="Delay for 2 seconds" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1897,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
     </Sequence>
   </Sequence>
 </Activity>

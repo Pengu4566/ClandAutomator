@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>510,1639</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1335,2969</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TelegramNotifier_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -59,10 +59,11 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="TelegramNotifier" sap:VirtualizedContainerService.HintSize="470,1519" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="TelegramNotifier" sap:VirtualizedContainerService.HintSize="1315,2869" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_telegramPath" />
       <Variable x:TypeArguments="x:String" Name="telegramPath" />
+      <Variable x:TypeArguments="x:Boolean" Name="telegramExists" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -70,68 +71,163 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_telegramPath]" DisplayName="Read &quot;Sheet1&quot; of input xlsx file" sap:VirtualizedContainerService.HintSize="432,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="telegramPath.xlsx" />
-    <Assign sap:VirtualizedContainerService.HintSize="432,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[telegramPath]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[dt_telegramPath.Rows(0)(0).ToString]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[telegramPath]" sap:VirtualizedContainerService.HintSize="432,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="432,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'client'" sap:VirtualizedContainerService.HintSize="432,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-      <ui:Click.CursorPosition>
-        <ui:CursorPosition OffsetX="20" OffsetY="20" Position="TopLeft" />
-      </ui:Click.CursorPosition>
-      <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="0a653256478a6809cfa85c3b3e16ac22" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='59' role='client' /&gt;" WaitForReady="INTERACTIVE" />
-      </ui:Click.Target>
-    </ui:Click>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="432,276" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="368,198" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:CommentOut Body="{x:Null}" DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1273,93" sap2010:WorkflowViewState.IdRef="CommentOut_3" />
+    <If Condition="False" sap:VirtualizedContainerService.HintSize="1273,2617" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="1128,2469" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'Telegram.exe  Telegram'" sap:VirtualizedContainerService.HintSize="330,106" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
-            <ui:ClickImage.CursorPosition>
-              <ui:CursorPosition Position="Center">
-                <ui:CursorPosition.OffsetX>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:CursorPosition.OffsetX>
-                <ui:CursorPosition.OffsetY>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:CursorPosition.OffsetY>
-              </ui:CursorPosition>
-            </ui:ClickImage.CursorPosition>
-            <ui:ClickImage.Image>
-              <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
-            </ui:ClickImage.Image>
-            <ui:ClickImage.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;" WaitForReady="INTERACTIVE" />
-            </ui:ClickImage.Target>
-          </ui:ClickImage>
+          <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_telegramPath]" DisplayName="Read &quot;Sheet1&quot; of input xlsx file" sap:VirtualizedContainerService.HintSize="1086,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="telegramPath.xlsx" />
+          <Assign sap:VirtualizedContainerService.HintSize="1086,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[telegramPath]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[dt_telegramPath.Rows(0)(0).ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[telegramPath]" sap:VirtualizedContainerService.HintSize="1086,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+          <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="1086,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <ui:UiElementExists DisplayName="does telegram exist?" Exists="[telegramExists]" sap:VirtualizedContainerService.HintSize="1086,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="17f207a2cb7f737eae62733b6b28b4a2" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='59' role='client' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+            </ui:UiElementExists.Target>
+          </ui:UiElementExists>
+          <If Condition="[telegramExists]" DisplayName="if it does, interact with it, if not restart it and try again" sap:VirtualizedContainerService.HintSize="1086,1523" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,692" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'client'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition OffsetX="20" OffsetY="20" Position="TopLeft" />
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a57084c74a4d100511b76291d3268c47" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='60' role='client' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="type log message contents" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[notificationText]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="eea592388b25665689fb3c43275c4f0b" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='50' role='client' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="hit enter to send log message" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="%[d(enter)][u(enter)]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="72010e068592ff884a4dab1b8b676999" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='67' role='client' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'client'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition OffsetX="420" OffsetY="5" Position="TopLeft" />
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="eaffb2b997200243f5262a7dd0d35fd7" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='2' role='client' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="665,1375" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="telegramExistsReborn" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="623,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="InitializeTelegram.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:UiElementExists DisplayName="does telegram exist after being restarted?" Exists="[telegramExistsReborn]" sap:VirtualizedContainerService.HintSize="623,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="17f207a2cb7f737eae62733b6b28b4a2" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='59' role='client' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <If Condition="[telegramExistsReborn]" sap:VirtualizedContainerService.HintSize="623,1010" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="478,862" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,276" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'client'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition OffsetX="20" OffsetY="20" Position="TopLeft" />
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a57084c74a4d100511b76291d3268c47" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='60' role='client' /&gt;" WaitForReady="INTERACTIVE" />
+                              </ui:Click.Target>
+                            </ui:Click>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
+                      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="type log message contents" EmptyField="False" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="[notificationText]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="eea592388b25665689fb3c43275c4f0b" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='50' role='client' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="hit enter to send log message" EmptyField="False" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="%[d(enter)][u(enter)]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="72010e068592ff884a4dab1b8b676999" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='67' role='client' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'client'" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition OffsetX="420" OffsetY="5" Position="TopLeft" />
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="eaffb2b997200243f5262a7dd0d35fd7" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='2' role='client' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:Click.Target>
+                      </ui:Click>
+                    </Sequence>
+                  </If.Then>
+                </If>
+              </Sequence>
+            </If.Else>
+          </If>
+          <Assign sap:VirtualizedContainerService.HintSize="1086,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[telegramPath]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[dt_telegramPath.Rows(0)(0).ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[notificationText]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">poopepeeeee</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
         </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'client'" EmptyField="False" sap:VirtualizedContainerService.HintSize="432,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[notificationText]">
-      <ui:TypeInto.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7f4d15cbba49d3761b5993c30296f192" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='64' role='client' /&gt;" WaitForReady="INTERACTIVE" />
-      </ui:TypeInto.Target>
-    </ui:TypeInto>
-    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey 'client'" EmptyField="False" sap:VirtualizedContainerService.HintSize="432,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
-      <ui:SendHotkey.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7f4d15cbba49d3761b5993c30296f192" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='64' role='client' /&gt;" WaitForReady="INTERACTIVE" />
-      </ui:SendHotkey.Target>
-    </ui:SendHotkey>
-    <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey 'client'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,154" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="w" KeyModifiers="Ctrl" SendWindowMessages="False" SpecialKey="False">
-      <ui:SendHotkey.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="49af6bb2bd7d743775dc088fd348fa1b" Selector="&lt;wnd app='telegram.exe' cls='Qt5QWindowIcon' title='Telegram' /&gt;&lt;ctrl name='Telegram' role='client' /&gt;&lt;ctrl idx='52' role='client' /&gt;" WaitForReady="INTERACTIVE" />
-      </ui:SendHotkey.Target>
-    </ui:SendHotkey>
+      </If.Then>
+    </If>
   </Sequence>
 </Activity>
