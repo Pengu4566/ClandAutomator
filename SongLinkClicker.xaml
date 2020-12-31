@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1238,5891</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,5936</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SongLinkClicker_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -62,7 +62,6 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="middle clicks all unread song topics on a particular genre page, opening them in new tabs&#xA;&#xA;inputs:&#xA;string - song name without special characters&#xA;---&#xA;outputs:&#xA;int32 - number of links opened&#xA;datatable - list of songs on page&#xA;boolean - whether the end of unreads has been reached" DisplayName="SongLinkClicker" sap:VirtualizedContainerService.HintSize="1218,5831" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -234,7 +233,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'DrumBassD Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="71347d3bbfd4aac29a781534ff367c81" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenre+&quot; - &quot; + tabSelectorFixed + &quot;'/&gt;&quot;]">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'DrumBassD Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="71347d3bbfd4aac29a781534ff367c81" Selector="[&quot;&lt;html app='chrome.exe' title='&quot;+currentGenre+&quot; - &quot; + tabSelectorFixed + &quot;'/&gt;&quot;]">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>

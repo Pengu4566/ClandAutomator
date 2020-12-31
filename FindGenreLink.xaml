@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>793,1627</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>991,1632</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FindGenreLink_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +116,7 @@
                       </ui:InvokeWorkflowFile>
                       <ui:UiElementExists DisplayName="does the genre link exist on the visible page?" Exists="[genreExistsOnScreen]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                         <ui:UiElementExists.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="04334d89aef2922d942c908ce495387e" Selector="[&quot;&lt;html app='chrome.exe' title='EMDC.NU - Electronic Dance Music Community' /&gt;&lt;webctrl aaname=' &quot;+genreNoSpecials+&quot;' parentid='ipsLayout_mainArea' tag='A' isleaf='0' /&gt;&quot;]" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="04334d89aef2922d942c908ce495387e" Selector="[&quot;&lt;html app='chrome.exe' title='EMDC.NU - Electronic Dance Music Community' /&gt;&lt;webctrl aaname='*&quot;+genreNoSpecials+&quot;*' parentid='ipsLayout_mainArea' tag='A'/&gt;&quot;]" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                         </ui:UiElementExists.Target>
                       </ui:UiElementExists>
                       <If Condition="[genreExistsOnScreen]" DisplayName="If genre exists on screen" sap:VirtualizedContainerService.HintSize="521,476" sap2010:WorkflowViewState.IdRef="If_1">
@@ -140,7 +140,7 @@
                                 </ui:CursorPosition>
                               </ui:Click.CursorPosition>
                               <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ada3857c9480e112c580c098a1d4657f" Selector="[&quot;&lt;html app='chrome.exe' title='EMDC.NU - Electronic Dance Music Community' /&gt;&lt;webctrl aaname=' &quot;+genreNoSpecials+&quot;' parentid='ipsLayout_mainArea' tag='A' isleaf='0' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="ada3857c9480e112c580c098a1d4657f" Selector="[&quot;&lt;html app='chrome.exe' title='EMDC.NU - Electronic Dance Music Community' /&gt;&lt;webctrl aaname='*&quot;+genreNoSpecials+&quot;*' parentid='ipsLayout_mainArea' tag='A'/&gt;&quot;]" WaitForReady="INTERACTIVE" />
                               </ui:Click.Target>
                             </ui:Click>
                           </Sequence>

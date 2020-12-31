@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1293,6727" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:t="clr-namespace:Telegram;assembly=Telegram.Activities" xmlns:t1="clr-namespace:Telegram;assembly=Telegram" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1123,6702" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:t="clr-namespace:Telegram;assembly=Telegram.Activities" xmlns:t1="clr-namespace:Telegram;assembly=Telegram" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -32,6 +32,7 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -66,9 +67,10 @@
       <AssemblyReference>Telegram.Activities</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1133,6622" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="1133,6597" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_genreList" />
       <Variable x:TypeArguments="ui:Browser" Name="chromeBrowser" />
@@ -84,7 +86,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="1091,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign DisplayName="Assign bot token - totally secure" sap:VirtualizedContainerService.HintSize="1091,60" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[bot_token]</OutArgument>
       </Assign.To>
@@ -92,42 +94,9 @@
         <InArgument x:TypeArguments="x:String">1418517323:AAGdb288U9RGy7QoDugbJqciCeZgbvcEOVM</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1091,93" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;[Main] - testing uipath functionality&quot;]" />
-    <t:TelegramAppScope BotToken="1418517323:AAGdb288U9RGy7QoDugbJqciCeZgbvcEOVM" DisplayName="Telegram Connector Scope" sap:VirtualizedContainerService.HintSize="1091,471" sap2010:WorkflowViewState.IdRef="TelegramAppScope_1">
-      <t:TelegramAppScope.Body>
-        <ActivityAction x:TypeArguments="t1:TelegramProp">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="t1:TelegramProp" Name="telegramDetails" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Execute Telegram activities" sap:VirtualizedContainerService.HintSize="478,346" sap2010:WorkflowViewState.IdRef="Sequence_19">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="scg:List(x:String)" Name="messagesList" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <t:SendMessage Chat_ID="390255012" DisplayName="Send Message" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="SendMessage_2" Message_Text="I AM ALIVE" />
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,192" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <t:SendMessage Chat_ID="{x:Null}" DisplayName="Send Message" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SendMessage_1" Message_Text="I AM ALIVE BABEEE" />
-                </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
-          </Sequence>
-        </ActivityAction>
-      </t:TelegramAppScope.Body>
-    </t:TelegramAppScope>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1091,443" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1091,431" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Extracts genres from an input csv into a dataframe&#xA;&#xA;inputs:&#xA;.xlsx - excel spreadsheet of genres&#xA;&#xA;outputs:&#xA;datatable - genres" DisplayName="extract search terms from excel file " sap:VirtualizedContainerService.HintSize="334,211" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ExtractSearchTerms.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Extracts genres from an input csv into a dataframe&#xA;&#xA;inputs:&#xA;.xlsx - excel spreadsheet of genres&#xA;&#xA;outputs:&#xA;datatable - genres" DisplayName="extract search terms from excel file " sap:VirtualizedContainerService.HintSize="334,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ExtractSearchTerms.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <OutArgument x:TypeArguments="sd:DataTable" x:Key="SearchTerms">[dt_genreList]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
@@ -139,7 +108,7 @@
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -155,7 +124,45 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="navigates to cland.io and opens new tabs corresponding to the genres in the input exel file&#xA;&#xA;inputs:&#xA;---&#xA;outputs:&#xA;UIpath.core.browser - browser variable&#xA;---&#xA;in/out:&#xA;DataTable - genre list" DisplayName="initialize cland website" sap:VirtualizedContainerService.HintSize="1091,259" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="InitializeCLand.xaml">
+    <t:TelegramAppScope BotToken="1418517323:AAGdb288U9RGy7QoDugbJqciCeZgbvcEOVM" DisplayName="Telegram Connector Scope" sap:VirtualizedContainerService.HintSize="1091,603" sap2010:WorkflowViewState.IdRef="TelegramAppScope_2">
+      <t:TelegramAppScope.Body>
+        <ActivityAction x:TypeArguments="t1:TelegramProp">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="t1:TelegramProp" Name="telegramDetails" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Execute Telegram activities" sap:VirtualizedContainerService.HintSize="349,478" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:List(x:String)" Name="messagesList" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <t:SendMessage Chat_ID="390255012" DisplayName="Send Message" sap:VirtualizedContainerService.HintSize="307,22" sap2010:WorkflowViewState.IdRef="SendMessage_3" Message_Text="-------------------------------------------------------" />
+            <t:SendMessage Chat_ID="390255012" DisplayName="Send Message" sap:VirtualizedContainerService.HintSize="307,22" sap2010:WorkflowViewState.IdRef="SendMessage_5" Message_Text="[main] - downloading the following genres:" />
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_genreList]" DisplayName="log all the genres we are downloading" sap:VirtualizedContainerService.HintSize="307,262" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <t:SendMessage Chat_ID="390255012" DisplayName="Send Message" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SendMessage_4" Message_Text="[row(0).ToString]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </t:TelegramAppScope.Body>
+    </t:TelegramAppScope>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="navigates to cland.io and opens new tabs corresponding to the genres in the input exel file&#xA;&#xA;inputs:&#xA;---&#xA;outputs:&#xA;UIpath.core.browser - browser variable&#xA;---&#xA;in/out:&#xA;DataTable - genre list" DisplayName="initialize cland website" sap:VirtualizedContainerService.HintSize="1091,249" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="InitializeCLand.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="ui:Browser" x:Key="chromeBrowser">[chromeBrowser]</OutArgument>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_genreList">[dt_genreList]</InOutArgument>
@@ -182,7 +189,7 @@
         <InArgument x:TypeArguments="x:Int32">1</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1091,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;makegenretodolist&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1091,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;makegenretodolist&quot;]" />
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="navigates to cland.io and opens new tabs corresponding to the genres in the input exel file&#xA;&#xA;inputs:&#xA;---&#xA;outputs:&#xA;UIpath.core.browser - browser variable&#xA;---&#xA;in/out:&#xA;DataTable - genre list" DisplayName="generate reverse list to match chrome tabs" sap:VirtualizedContainerService.HintSize="1091,259" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="makeGenreTodoList.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="genreList">[dt_genreList]</InArgument>

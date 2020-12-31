@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="InitializeLinkedIn" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="InitializeLinkedIn" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:t="clr-namespace:Telegram;assembly=Telegram.Activities" xmlns:t1="clr-namespace:Telegram;assembly=Telegram" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="chromeBrowser" Type="OutArgument(ui:Browser)" />
     <x:Property Name="dt_genreList" Type="InOutArgument(sd:DataTable)" />
@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>496,888</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>991,1172</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InitializeLinkedIn_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -32,6 +32,11 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>Telegram</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -59,9 +64,13 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>Telegram</AssemblyReference>
+      <AssemblyReference>Telegram.Activities.Design</AssemblyReference>
+      <AssemblyReference>Telegram.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="navigates to cland.io and opens new tabs corresponding to the genres in the input exel file&#xA;&#xA;inputs:&#xA;---&#xA;outputs:&#xA;UIpath.core.browser - browser variable&#xA;---&#xA;in/out:&#xA;DataTable - genre list" DisplayName="InitializeLinkedIn" sap:VirtualizedContainerService.HintSize="476,788" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="navigates to cland.io and opens new tabs corresponding to the genres in the input exel file&#xA;&#xA;inputs:&#xA;---&#xA;outputs:&#xA;UIpath.core.browser - browser variable&#xA;---&#xA;in/out:&#xA;DataTable - genre list" DisplayName="InitializeLinkedIn" sap:VirtualizedContainerService.HintSize="476,1067" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="genreExistsOnScreen" />
       <Variable x:TypeArguments="x:Boolean" Name="atBottomOfPage" />
@@ -72,6 +81,26 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <t:TelegramAppScope BotToken="1418517323:AAGdb288U9RGy7QoDugbJqciCeZgbvcEOVM" DisplayName="Telegram Connector Scope" sap:VirtualizedContainerService.HintSize="434,239" sap2010:WorkflowViewState.IdRef="TelegramAppScope_1">
+      <t:TelegramAppScope.Body>
+        <ActivityAction x:TypeArguments="t1:TelegramProp">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="t1:TelegramProp" Name="telegramDetails" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Execute Telegram activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:List(x:String)" Name="messagesList" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <t:SendMessage Chat_ID="390255012" DisplayName="Send Message" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SendMessage_1" Message_Text="Initialize Cland" />
+          </Sequence>
+        </ActivityAction>
+      </t:TelegramAppScope.Body>
+    </t:TelegramAppScope>
     <ui:OpenBrowser BrowserType="Chrome" DisplayName="Open CLand website" Hidden="False" sap:VirtualizedContainerService.HintSize="434,534" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" UiBrowser="[chromeBrowser]" Url="https://EDMC.NU">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
