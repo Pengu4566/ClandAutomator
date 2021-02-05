@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TabSelectorFixer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TabSelectorFixer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:t="clr-namespace:Telegram;assembly=Telegram.Activities" xmlns:t1="clr-namespace:Telegram;assembly=Telegram" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="outString" Type="OutArgument(x:String)" />
     <x:Property Name="inStringGenre" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>593,1080</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1611,908</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TabSelectorFixer_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -31,6 +31,9 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>Telegram</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -56,18 +59,22 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>Telegram</AssemblyReference>
+      <AssemblyReference>Telegram.Activities.Design</AssemblyReference>
+      <AssemblyReference>Telegram.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Changes the text of the current tab selector to correct irregularities in the cllv site design (&quot;Electronic Dance Music Community&quot; vs &quot;EDM Community&quot;)&#xA;&#xA;inputs:&#xA;string - tab selector name&#xA;---&#xA;outputs:&#xA;string - fixed tab selector" DisplayName="TabSelectorFixer" sap:VirtualizedContainerService.HintSize="553,960" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence sap2010:Annotation.AnnotationText="Changes the text of the current tab selector to correct irregularities in the cllv site design (&quot;Electronic Dance Music Community&quot; vs &quot;EDM Community&quot;)&#xA;&#xA;inputs:&#xA;string - tab selector name&#xA;---&#xA;outputs:&#xA;string - fixed tab selector" DisplayName="TabSelectorFixer" sap:VirtualizedContainerService.HintSize="653,803" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[inStringGenre.Equals(&quot;Hip?Hop/Rap&quot;)]" DisplayName="if the input string is &quot;Hip?Hop/Rap&quot;" sap:VirtualizedContainerService.HintSize="531,332" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[inStringGenre.Equals(&quot;Hip?Hop/Rap&quot;) Or inStringGenre.Equals(&quot;Mainstream&quot;) Or inStringGenre.Equals(&quot;Wave&quot;) Or inStringGenre.Equals(&quot;Melodic*Progressive&quot;) Or inStringGenre.Equals(&quot;Acid*/*Hard*Techno&quot;) Or inStringGenre.Equals(&quot;Techno&quot;) Or inStringGenre.Equals(&quot;Psy?Breaks&quot;) Or inStringGenre.Equals(&quot;Chillhop/Downtempo/Lo?Fi&quot;) Or inStringGenre.Equals(&quot;Deep/Techstep&quot;)]" DisplayName="if the input string is &quot;Hip?Hop/Rap&quot;" sap:VirtualizedContainerService.HintSize="611,300" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
-        <Assign DisplayName="change tab selector" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign DisplayName="change tab selector" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[outString]</OutArgument>
           </Assign.To>
@@ -77,51 +84,42 @@
         </Assign>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="264,184" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="change tab selector" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="change tab selector" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[outString]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">EDM Community</InArgument>
+              <InArgument x:TypeArguments="x:String">EDM*Community</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[inStringGenre.Equals(&quot;Mainstream&quot;)]" DisplayName="if the input string is &quot;Mainstream&quot;" sap:VirtualizedContainerService.HintSize="531,332" sap2010:WorkflowViewState.IdRef="If_4">
-      <If.Then>
-        <Assign DisplayName="change tab selector" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:String">[outString]</OutArgument>
-          </Assign.To>
-          <Assign.Value>
-            <InArgument x:TypeArguments="x:String">Electronic Dance Music Community</InArgument>
-          </Assign.Value>
-        </Assign>
-      </If.Then>
-      <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="264,184" sap2010:WorkflowViewState.IdRef="Sequence_4">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="change tab selector" sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[outString]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">EDM Community</InArgument>
-            </Assign.Value>
-          </Assign>
-        </Sequence>
-      </If.Else>
-    </If>
+    <t:TelegramAppScope BotToken="1418517323:AAGdb288U9RGy7QoDugbJqciCeZgbvcEOVM" DisplayName="Telegram Connector Scope" sap:VirtualizedContainerService.HintSize="611,239" sap2010:WorkflowViewState.IdRef="TelegramAppScope_1">
+      <t:TelegramAppScope.Body>
+        <ActivityAction x:TypeArguments="t1:TelegramProp">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="t1:TelegramProp" Name="telegramDetails" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Execute Telegram activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:List(x:String)" Name="messagesList" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <t:SendMessage Chat_ID="390255012" DisplayName="Send Message" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="SendMessage_1" Message_Text="[&quot;[TabSelectorFixer] - &quot; + outString + &quot; ____ &quot; + inStringGenre]" />
+          </Sequence>
+        </ActivityAction>
+      </t:TelegramAppScope.Body>
+    </t:TelegramAppScope>
   </Sequence>
 </Activity>
